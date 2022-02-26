@@ -1,4 +1,3 @@
-
 const input = document.querySelector(".input-field");
 const enterButton = document.querySelector(".enter-button");
 const list = document.querySelector(".todos-container");
@@ -9,23 +8,23 @@ enterButton.addEventListener("click", function() {
     let text = input.value;
     list.innerHTML += 
     `
-        <div class="todo">
-            <div class="check">
-                <input type="checkbox" name="check-todo">
-            </div>
-            <div class="text">${text}</div>
-            <div class="buttons">
-                <button class="edit">
-                    edit
-                </button>
-                <button class="save hidden">
-                    save
-                </button>
-                <button class="delete">
-                    delete
-                </button>
-            </div>
-        </div>
+    <div class="todo">
+    <div class="check">
+    <input type="checkbox" name="check-todo">
+    </div>
+    <div class="text">${text}</div>
+    <div class="buttons">
+    <button class="edit">
+    edit
+    </button>
+    <button class="save hidden">
+    save
+    </button>
+    <button class="delete">
+    delete
+    </button>
+    </div>
+    </div>
     `;
     todo();
 })
@@ -60,7 +59,7 @@ function todo() {
             clickedButton.classList.add("hidden");
         })
     });
-
+    
     //save todo
     saveButtons.forEach(singleButton => {        
         singleButton.addEventListener("click", function (e) {
@@ -71,12 +70,11 @@ function todo() {
             inputToSave.outerHTML = 
             `
             <div class="text">
-                ${textToSave}       
+            ${textToSave}       
             </div>
             `;
             editButton.classList.remove("hidden");
             clickedButton.classList.add("hidden");
         })
     });
-
 }
